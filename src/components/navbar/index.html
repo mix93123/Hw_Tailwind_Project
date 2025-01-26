@@ -1,25 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Portfolio - Navbar</title>
-</head>
-<body>
+<!-- Navbar -->
+<nav class="bg-gray-800 text-white p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <!-- Logo -->
+    <div class="text-2xl font-bold">My Portfolio</div>
 
-  <!-- Navbar -->
-  <nav class="bg-gray-800 text-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="text-2xl font-bold">My Portfolio</div>
-      <ul class="flex space-x-6">
-        <li><a href="#about" class="hover:text-orange-500 transition">About</a></li>
-        <li><a href="#projects" class="hover:text-orange-500 transition">Projects</a></li>
-        <li><a href="#skills" class="hover:text-orange-500 transition">Skills</a></li>
-        <li><a href="#contact" class="hover:text-orange-500 transition">Contact</a></li>
-      </ul>
+    <!-- Hamburger Menu for Mobile -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-white focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
     </div>
-  </nav>
 
-</body>
-</html>
+    <!-- Navigation Links -->
+    <ul id="menu" class="hidden md:flex space-x-6">
+      <li><a href="#home" class="hover:text-orange-500 transition">Home</a></li>
+      <li><a href="#about" class="hover:text-orange-500 transition">About</a></li>
+      <li><a href="#projects" class="hover:text-orange-500 transition">Projects</a></li>
+      <li><a href="#contact" class="hover:text-orange-500 transition">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-gray-700 p-4">
+    <ul class="space-y-4">
+      <li><a href="#home" class="block hover:text-orange-500 transition">Home</a></li>
+      <li><a href="#about" class="block hover:text-orange-500 transition">About</a></li>
+      <li><a href="#projects" class="block hover:text-orange-500 transition">Projects</a></li>
+      <li><a href="#contact" class="block hover:text-orange-500 transition">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
